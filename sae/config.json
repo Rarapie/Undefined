@@ -1,0 +1,5 @@
+{
+  "time_encoder_layers": [128, 64, 32, 16, 8],
+  "regressor_layers": [512, 256, 128, 64, 32, 1],
+  "dropout_rate": 0.4
+}
