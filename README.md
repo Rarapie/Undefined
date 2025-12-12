@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 Located in: `./autoencoder/predict.py`
 
-This module utilizes a **Multi-Task Stacked Autoencoder (SAE)** architecture to perform **Tissue Classification** and **Time Regression** simultaneously. It employs an attention mechanism (`TimeAttention`) to enhance time feature extraction using tissue classification probabilities.
+This module utilizes a **Multi-Task Stacked Autoencoder (SAE)** architecture to perform **Tissue Classification** and **Time Regression** simultaneously. It employs an attention mechanism (`TimeAttention`) to enhance time feature extraction using tissue classification probabilities. Current version supports human skin and muscle samples.
 
 ### Overview
   * **Inputs:** Requires two separate CSV files (Time features and Tissue features).
