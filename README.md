@@ -31,8 +31,7 @@ Located in: `./autoencoder/predict.py`
 
 This module utilizes a **Multi-Task Stacked Autoencoder (SAE)** architecture to perform **Tissue Classification** and **Time Regression** simultaneously. It employs an attention mechanism (`TimeAttention`) to enhance time feature extraction using tissue classification probabilities.
 
-### \<span id="overview-sae"\>Overview\</span\>
-
+### Overview
   * **Inputs:** Requires two separate CSV files (Time features and Tissue features).
   * **Logic:**
     1.  Aligns sample IDs between the two input files (intersection).
@@ -41,8 +40,7 @@ This module utilizes a **Multi-Task Stacked Autoencoder (SAE)** architecture to 
     4.  Performs inference on GPU (if available) or CPU.
   * **Outputs:** Predicted Tissue Label and Time (in hours), saved to a CSV file.
 
-### \<span id="file-dependencies-sae"\>File Dependencies\</span\>
-
+### File Dependencies
 To run this script, you need the following artifacts generated during training:
 
 | File Type | Default Name | Description |
@@ -51,7 +49,7 @@ To run this script, you need the following artifacts generated during training:
 | **Metadata** | `model_meta.pkl` | Pickle file containing Scalers, LabelEncoders, and feature column names. |
 | **Config** | `config.json` | JSON file defining the model architecture (layer sizes, dropout, etc.). |
 
-### \<span id="usage-sae"\>Usage\</span\>
+### Usage
 
 #### Basic Example
 
@@ -92,7 +90,7 @@ Located in: `./boruta_rfc/predict.py`
 
 This module handles inference for machine learning models (e.g., Random Forest) where feature selection was performed using **Boruta**. It ensures that the input data strictly matches the features selected during training.
 
-### \<span id="overview-boruta"\>Overview\</span\>
+### Overview
 
   * **Inputs:** A single CSV file containing sample features.
   * **Logic:**
@@ -102,14 +100,14 @@ This module handles inference for machine learning models (e.g., Random Forest) 
     4.  Runs prediction using the loaded model.
   * **Outputs:** Sample IDs and their predicted values.
 
-### \<span id="file-dependencies-boruta"\>File Dependencies\</span\>
+### File Dependencies
 
 | File Type | Default Name | Description |
 | :--- | :--- | :--- |
 | **Model** | `final_model.pkl` | The trained model object saved via `joblib`. |
 | **Feature List** | `selected_features.csv` | A CSV containing the names of features selected by Boruta. |
 
-### \<span id="usage-boruta"\>Usage\</span\>
+### Usage
 
 #### Basic Example
 
@@ -140,7 +138,7 @@ python ./boruta_rfc/predict.py \
 
 ## Data Format
 
-For all input CSV files, the **first column** must be the Sample ID (index).
+For all input CSV files, the **first column** must be the Sample ID (index). Please check the demo CSV files.
 
 **Example:**
 
@@ -149,7 +147,3 @@ SampleID,Gene_A,Gene_B,Gene_C,...
 S001,0.5,1.2,0.0,...
 S002,0.1,0.9,1.5,...
 ```
-
-### Next Step
-
-Would you like me to create a **`requirements.txt`** file or a **sample JSON config** for the Autoencoder to go along with this documentation?
